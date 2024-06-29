@@ -20,8 +20,13 @@ function App() {
     }, [tasks]);
 
     const addTask = () => {
-        setTasks([...tasks, {text: newTask, completed: false}]);
-        setNewTask('');
+        if (newTask.trim() !== '') {
+            setTasks([...tasks, { text: newTask, completed: false }]);
+            setNewTask('');
+        }
+        else {
+            window.alert('Task cannot be empty');
+        }
     };
 
     const toggleTask = index => {
