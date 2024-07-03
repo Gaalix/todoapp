@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Button, TextInput, UnorderedList, FormLabel, Header, HeaderName} from "@carbon/react";
+import {Button, TextInput, UnorderedList, Header, HeaderName} from "@carbon/react";
 import Task from "./components/Task";
 
 
@@ -47,13 +47,17 @@ function App() {
                     To Do App
                 </HeaderName>
             </Header>
-            <div className="container">
+            <div className="container" style={{ marginTop: '48px', padding: '20px' }}>
                 <div className="task-input">
-                    <FormLabel for="new-task">Input your task:</FormLabel>
-                    <TextInput id="new-task" labelText="." value={newTask} onChange={e => setNewTask(e.target.value)}/>
-                    <Button onClick={addTask}>Add task</Button>
+                    <TextInput
+                        id="new-task"
+                        placeholder="Enter your task"
+                        value={newTask}
+                        onChange={e => setNewTask(e.target.value)}
+                    />
+                    <Button onClick={addTask} style={{ marginTop: '10px' }}>Add task</Button>
                 </div>
-                <div className="task-list">
+                <div className="task-list" style={{ marginTop: '20px' }}>
                     <h2>Task List</h2>
                     <UnorderedList>
                         {tasks.map((task, index) => (
