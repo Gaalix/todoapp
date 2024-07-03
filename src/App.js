@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {Button, TextInput, UnorderedList, FormLabel, Header, HeaderName} from "carbon-components-react";
+import {Button, TextInput, UnorderedList, FormLabel, Header, HeaderName} from "@carbon/react";
 import Task from "./components/Task";
-import "./App.css";
 
 
 function App() {
@@ -51,7 +50,7 @@ function App() {
             <div className="container">
                 <div className="task-input">
                     <FormLabel for="new-task">Input your task:</FormLabel>
-                    <TextInput id="new-task" labelText="" value={newTask} onChange={e => setNewTask(e.target.value)}/>
+                    <TextInput id="new-task" labelText="." value={newTask} onChange={e => setNewTask(e.target.value)}/>
                     <Button onClick={addTask}>Add task</Button>
                 </div>
                 <div className="task-list">
